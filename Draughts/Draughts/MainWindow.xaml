@@ -1,0 +1,122 @@
+﻿<Window x:Class="Draughts.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Draughts"
+        mc:Ignorable="d"
+        Title="Draughts" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize" Background="{DynamicResource BackgroundBrush}">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="70" />
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="Times New Roman" />
+            <Setter Property="FontWeight" Value="DemiBold" />
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="Times New Roman" />
+            <Setter Property="FontWeight" Value="DemiBold" />
+        </Style>
+
+        <LinearGradientBrush x:Key="BackgroundBrush">
+            <GradientStop Offset="0" Color="White"/>
+            <GradientStop Offset=".5" Color="DarkGray"/>
+            <GradientStop Offset="1" Color="WhiteSmoke"/>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="SideBackgroundBrush">
+            <GradientStop Offset="0" Color="White"/>
+            <GradientStop Offset=".5" Color="DarkGray"/>
+            <GradientStop Offset="1" Color="WhiteSmoke"/>
+        </LinearGradientBrush>
+
+    </Window.Resources>
+    <DockPanel x:Name="Container" Width="Auto" Height="Auto">
+        <Grid x:Name="Board" Height="800" Width="800">
+            <!--<Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>-->
+
+            <!--<Button Click="Button_Click" x:Name="btn1" Background="Black" BorderBrush="DarkGray" Grid.Column="0" Grid.Row="7" />
+            <Button Click="Button_Click" x:Name="btn2" Background="Black" BorderBrush="DarkGray" Grid.Column="2" Grid.Row="7" />
+            <Button Click="Button_Click" x:Name="btn3" Background="Black" BorderBrush="DarkGray" Grid.Column="4" Grid.Row="7" />
+            <Button Click="Button_Click" x:Name="btn4" Background="Black" BorderBrush="DarkGray" Grid.Column="6" Grid.Row="7" />
+
+            <Button Click="Button_Click" x:Name="btn5" Background="Black" BorderBrush="DarkGray" Grid.Column="1" Grid.Row="6" />
+            <Button Click="Button_Click" x:Name="btn6" Background="Black" BorderBrush="DarkGray" Grid.Column="3" Grid.Row="6" />
+            <Button Click="Button_Click" x:Name="btn7" Background="Black" BorderBrush="DarkGray" Grid.Column="5" Grid.Row="6" />
+            <Button Click="Button_Click" x:Name="btn8" Background="Black" BorderBrush="DarkGray" Grid.Column="7" Grid.Row="6" />
+
+            <Button Click="Button_Click" x:Name="btn9" Background="Black" BorderBrush="DarkGray" Grid.Column="0" Grid.Row="5" />
+            <Button Click="Button_Click" x:Name="btn10" Background="Black" BorderBrush="DarkGray" Grid.Column="2" Grid.Row="5" />
+            <Button Click="Button_Click" x:Name="btn11" Background="Black" BorderBrush="DarkGray" Grid.Column="4" Grid.Row="5" />
+            <Button Click="Button_Click" x:Name="btn12" Background="Black" BorderBrush="DarkGray" Grid.Column="6" Grid.Row="5" />
+
+            <Button Click="Button_Click" x:Name="btn13" Background="Black" BorderBrush="DarkGray" Grid.Column="1" Grid.Row="4" />
+            <Button Click="Button_Click" x:Name="btn14" Background="Black" BorderBrush="DarkGray" Grid.Column="3" Grid.Row="4" />
+            <Button Click="Button_Click" x:Name="btn15" Background="Black" BorderBrush="DarkGray" Grid.Column="5" Grid.Row="4" />
+            <Button Click="Button_Click" x:Name="btn16" Background="Black" BorderBrush="DarkGray" Grid.Column="7" Grid.Row="4" />
+
+            <Button Click="Button_Click" x:Name="btn17" Background="Black" BorderBrush="DarkGray" Grid.Column="0" Grid.Row="3" />
+            <Button Click="Button_Click" x:Name="btn18" Background="Black" BorderBrush="DarkGray" Grid.Column="2" Grid.Row="3" />
+            <Button Click="Button_Click" x:Name="btn19" Background="Black" BorderBrush="DarkGray" Grid.Column="4" Grid.Row="3" />
+            <Button Click="Button_Click" x:Name="btn20" Background="Black" BorderBrush="DarkGray" Grid.Column="6" Grid.Row="3" />
+
+            <Button Click="Button_Click" x:Name="btn21" Background="Black" BorderBrush="DarkGray" Grid.Column="1" Grid.Row="2" />
+            <Button Click="Button_Click" x:Name="btn22" Background="Black" BorderBrush="DarkGray" Grid.Column="3" Grid.Row="2" />
+            <Button Click="Button_Click" x:Name="btn23" Background="Black" BorderBrush="DarkGray" Grid.Column="5" Grid.Row="2" />
+            <Button Click="Button_Click" x:Name="btn24" Background="Black" BorderBrush="DarkGray" Grid.Column="7" Grid.Row="2" />
+
+            <Button Click="Button_Click" x:Name="btn25" Background="Black" BorderBrush="DarkGray" Grid.Column="0" Grid.Row="1" />
+            <Button Click="Button_Click" x:Name="btn26" Background="Black" BorderBrush="DarkGray" Grid.Column="2" Grid.Row="1" />
+            <Button Click="Button_Click" x:Name="btn27" Background="Black" BorderBrush="DarkGray" Grid.Column="4" Grid.Row="1" />
+            <Button Click="Button_Click" x:Name="btn28" Background="Black" BorderBrush="DarkGray" Grid.Column="6" Grid.Row="1" />
+
+            <Button Click="Button_Click" x:Name="btn29" Background="Black" BorderBrush="DarkGray" Grid.Column="1" Grid.Row="0" />
+            <Button Click="Button_Click" x:Name="btn30" Background="Black" BorderBrush="DarkGray" Grid.Column="3" Grid.Row="0" />
+            <Button Click="Button_Click" x:Name="btn31" Background="Black" BorderBrush="DarkGray" Grid.Column="5" Grid.Row="0" />
+            <Button Click="Button_Click" x:Name="btn32" Background="Black" BorderBrush="DarkGray" Grid.Column="7" Grid.Row="0" />-->
+
+        </Grid>
+
+        <DockPanel x:Name="SideBar" Width="Auto" Background="{DynamicResource SideBackgroundBrush}" >
+            <Border BorderBrush="DarkGray" BorderThickness="5" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Center">
+                <Border BorderBrush="Black" BorderThickness="3">
+                    <DockPanel Width="150" Height="750">
+                        <Label DockPanel.Dock="Top" Content="AI" x:Name="Player1" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        <Label DockPanel.Dock="Bottom" Content="Human" x:Name="Player2" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                        <Ellipse Width="75" Height="75" Fill="Black" DockPanel.Dock="Top" x:Name="AI_id"></Ellipse>
+                        <Ellipse Width="75" Height="75" Fill="Black" DockPanel.Dock="Bottom" x:Name="Human_id"></Ellipse>
+
+                        <TextBlock x:Name="Current" FontSize="20" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Center" Text="Player Turn" />
+                    </DockPanel>
+                </Border>
+            </Border>
+        </DockPanel>
+
+    </DockPanel>
+</Window>
